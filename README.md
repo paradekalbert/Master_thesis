@@ -2,7 +2,7 @@
 R code for Causalities
 
 
-This file contains R code for my master thesis Detection of causality in time seriesusing extreme values. It contains mainly two functions. 
+This file contains R code for my master thesis Detection of causality in time seriesusing extreme values. Thesis can be found in PATH NOT FOUND. It contains mainly two functions. 
 
 Function CTC(x, lag=3, v=0.4, both_ways=FALSE, derivative=FALSE) computes causal tail coefficient for time series with the given lag. 
 Number $v$ represents a function k=n^v, where n is number of data, and k is the number of extremal values from which we compute this statistic.
