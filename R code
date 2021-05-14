@@ -68,7 +68,7 @@ switcher_for_bootstrap <- function(x, number_of_blocks=15){
 
 
 #########################causal tail coefficient for time series###############################################################
-CTC<- function(x, lag=3, v=0.4, both_ways=FALSE, derivative=FALSE){
+CTC<- function(x, lag=3, v=0.5, both_ways=FALSE, derivative=FALSE){
   n=nrow(x)
   k=floor(n^{v})
   
@@ -114,7 +114,7 @@ CTC<- function(x, lag=3, v=0.4, both_ways=FALSE, derivative=FALSE){
 
 
 
-bootstrap_step<-function(x, number_of_blocks=15, number_of_resampling=50, lag=5,  v=0.4){
+bootstrap_step<-function(x, number_of_blocks=15, number_of_resampling=200, lag=5,  v=0.5){
   
   C=CTC(x, lag,  v)
   list=c(0,0)
@@ -126,7 +126,7 @@ bootstrap_step<-function(x, number_of_blocks=15, number_of_resampling=50, lag=5,
   return(list[,-1])
 }
 
-CTC_bootstrap<-function(x, number_of_blocks=15, number_of_resampling=50, lag=5,  v=0.4){
+CTC_bootstrap<-function(x, number_of_blocks=15, number_of_resampling=200, lag=5,  v=0.5){
   
   C=CTC(x, lag, v)
   list= bootstrap_step(x, number_of_blocks, number_of_resampling, lag,  v)
